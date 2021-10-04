@@ -66,21 +66,37 @@ LinkedList.prototype.search = function (searchValue) {
   let currentNode = this.head;
   while (currentNode) {
     if (currentNode.value === searchValue) {
-      return currentNode.value;
+      return `${currentNode.value} is in the Linked List!`;
     }
     currentNode = currentNode.next;
   }
+  return null;
+};
+
+// indexOf method
+LinkedList.prototype.indexOf = function (value) {
+  let indexes = [];
+  let currentIndex = 0;
+  let currentNode = this.head;
+  while (currentNode) {
+    if (currentNode.value === value) {
+      indexes.push(currentIndex);
+    }
+    currentNode = currentNode.next;
+    currentIndex++;
+  }
+  return indexes;
 };
 
 let LL = new LinkedList();
 // let node1 = new Node(100, node2, null);
 
-LL.addToHead(100);
-LL.addToHead(200);
-LL.addToHead(300);
+LL.addToHead(3);
+LL.addToHead(2);
+LL.addToHead(1);
 LL.addToTail(10);
-LL.removeHead();
-LL.removeTail();
+// LL.removeHead();
+// LL.removeTail();
 
+console.log(LL.search(10));
 console.log(LL);
-// console.log(node1);
