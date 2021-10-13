@@ -19,8 +19,6 @@ function isPalindrome(string) {
   return trueOrFalse;
 }
 
-isPalindrome("iv*&anmile$%nko978vic");
-
 function isPalindrome(string) {
   string = string.toLowerCase();
   let charactersArray = string.split("");
