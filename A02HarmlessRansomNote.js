@@ -11,6 +11,7 @@ function harmlessRansomNote(noteText, magazineText) {
   });
 
   let noteIsPossible = true;
+
   noteArray.forEach((word) => {
     if (magazineObj[word]) {
       magazineObj[word]--;
@@ -32,3 +33,33 @@ harmlessRansomNote(
 
 // Linear Time Complexity or O (n) run time - two loops, but they are not nested
 // O (n) + O (m) => O (n + m) => O (n)
+
+// My Solution
+function harmlessRansomNote(noteText, magazineText) {
+  let noteArray = noteText.split(" ");
+  let magazineArray = magazineText.split(" ");
+  let obj = {};
+
+  for (let magazineWord of magazineArray) {
+    if (!obj[magazineWord]) {
+      obj[magazineWord] = 1;
+    } else {
+      obj[magazineWord]++;
+    }
+  }
+
+  let isPossible = true;
+
+  for (let noteWord of noteArray) {
+    if (noteWord in obj) {
+      obj[noteWord]--;
+      if (obj[noteWord] < 0) {
+        isPossible = false;
+      }
+    } else {
+      isPossible = false;
+    }
+  }
+
+  return isPossible;
+}
