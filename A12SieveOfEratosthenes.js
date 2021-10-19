@@ -31,3 +31,14 @@ function freqSeq(str, sep) {
 }
 
 freqSeq("hello world", "-");
+
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+function aclean(array) {
+  let newArray = array.map((word) =>
+    word.toLowerCase().split("").sort().join("")
+  );
+  return Array.from(new Set(newArray));
+}
+
+aclean(arr);
