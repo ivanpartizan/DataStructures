@@ -42,3 +42,44 @@ function aclean(array) {
 }
 
 aclean(arr);
+
+let salaries = {
+  John: 100,
+  Pete: 300,
+  Mary: 250,
+};
+
+function sumSalaries(obj) {
+  if (!obj) {
+    return 0;
+  } else {
+    let sum = 0;
+    let salaries = Object.values(obj);
+    console.log(salaries);
+    for (let salary of salaries) {
+      sum += salary;
+    }
+    return sum;
+  }
+}
+
+sumSalaries(salaries);
+
+let salaries = {
+  John: 100,
+  Pete: 300,
+  Mary: 250,
+};
+
+function topSalary(obj) {
+  let maxKey = null;
+  let maxPaid = 0;
+  for (let [k, v] of Object.entries(obj)) {
+    if (v > maxPaid) {
+      maxPaid = v;
+      maxKey = k;
+    }
+  }
+}
+
+topSalary(salaries);
