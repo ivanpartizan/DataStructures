@@ -41,20 +41,4 @@ palindrome(6, 4);
 palindrome(19, 3);
 
 // Numerical Palindrome #2
-function palindrome(num) {
-  if (!Number.isInteger(num) || num < 0) {
-    return "Not valid";
-  } else {
-    let string = String(num);
-    for (let i = 0; i < string.length / 2; i++) {
-      let temp = string[i];
-      string[i] = string[string.length - 1 - i];
-      string[string.length - 1 - i] = temp;
-      if (string[i] == string[string.length - 1 - i]) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-  }
-}
+function palindrome(num) {}
