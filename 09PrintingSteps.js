@@ -24,12 +24,20 @@ function steps1(n) {
 steps1(5);
 
 // Course Solution
-function printNumber(n) {
-  if (n === 0) {
+function steps2(n, row = 0, stair = "") {
+  if (n === row) {
     return;
   }
-  console.log(n);
-  printNumber(n - 1);
+  if (n === stair.length) {
+    console.log(stair);
+    return steps2(n, row + 1);
+  }
+  if (stair.length <= row) {
+    stair += "#";
+  } else {
+    stair += " ";
+  }
+  steps2(n, row, stair);
 }
 
-printNumber(10);
+steps2(5);
