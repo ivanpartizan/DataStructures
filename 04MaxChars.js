@@ -78,9 +78,9 @@ const getMax = (object) => {
   );
 };
 
-const obj = { apples: 1, bananas: 1, pears: 1 };
-
 getMax(obj);
+
+const obj = { apples: 1, bananas: 1, pears: 1 };
 
 const getMax1 = (obj) => {
   let maxValue = Math.max(...Object.keys(obj).map((value) => obj[value]));
@@ -89,3 +89,13 @@ const getMax1 = (obj) => {
 };
 
 getMax1(obj);
+
+// Combo
+const getMax2 = (object) => {
+  let max = Math.max(...Object.values(object));
+  return Object.keys(object).filter((key) => object[key] == max);
+};
+
+const obj1 = { a: 12, b: 11, c: 12 };
+
+getMax2(obj1);
